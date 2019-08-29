@@ -4,59 +4,53 @@ const timer = document.querySelector("#time-left"),
     configuration = document.querySelector(".pomodoro__configuration"),
     beep = document.querySelector("#beep");
 
-let sessionLength = 0.1,
-    breakLength = 5,
+let sessionLength = .1,
+    breakLength = .1,
     timerInterval,
     timeleft,
     breakStarted,
     timerRunning;
 
+
+function changeTimer(left) {
+    let minutes = Math.trunc(left / 60);
+    let seconds = left - minutes * 60;
+    if (minutes < 10) {
+        minutes = "0" + minutes;
+    }
+    if (seconds < 10) {
+        seconds = "0" + seconds;
+    }
+    timer.textContent = minutes + ":" + seconds;
+    if (breakStarted) {
+        timerName.textContent = "Break";
+    } else {
+        timerName.textContent = "Session";
+    }
+}
+
+
 function startTimer(time = sessionLength * 60) {
     timeleft = time;
     timerInterval = setTimeout(function timeout() {
         timeleft -= 1;
-        if (timeleft <= 0) {
+        if (timeleft === 0 && !breakStarted) {
             beep.play();
         }
         if (timeleft < 0) {
             if (breakStarted) {
                 breakStarted = false;
                 startTimer();
+                changeTimer(timeleft);
                 return;
             } else {
                 breakStarted = true;
                 startTimer(breakLength * 60);
-                let minutes = Math.trunc(timeleft / 60);
-                let seconds = timeleft - minutes * 60;
-                if (minutes < 10) {
-                    minutes = "0" + minutes;
-                }
-                if (seconds < 10) {
-                    seconds = "0" + seconds;
-                }
-                timer.textContent = minutes + ":" + seconds;
-                if (breakStarted) {
-                    timerName.textContent = "Break";
-                } else {
-                    timerName.textContent = "Session";
-                }
+                changeTimer(timeleft);
                 return;
             }
         }
-        let minutes = Math.trunc(timeleft / 60);
-        let seconds = timeleft - minutes * 60;
-        if (minutes < 10) {
-            minutes = "0" + minutes;
-        }
-        if (seconds < 10) {
-            seconds = "0" + seconds;
-        }
-        timer.textContent = minutes + ":" + seconds;
-        if (breakStarted) {
-            timerName.textContent = "Break";
-        } else {
-            timerName.textContent = "Session";
-        }
+        changeTimer(timeleft);
         timerInterval = setTimeout(timeout, 1000);
     }, 1000);
 }
