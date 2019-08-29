@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>Pomodoro</title>
+        <link rel="stylesheet" href="assets/css/style.css" />
+    </head>
+    <body>
+        <div class="app">
+            <div class="pomodoro">
+                <h1 class="pomodoro__title">Pomodoro Clock</h1>
+                <div class="pomodoro__configuration">
+                    <div class="pomodoro_item">
+                        <h2 id="break-label">Break Length</h2>
+                        <div class="pomodoro__item-settings">
+                            <i
+                                class="fas fa-arrow-down"
+                                id="break-decrement"
+                            ></i>
+                            <div id="break-length"></div>
+                            <i class="fas fa-arrow-up" id="break-increment"></i>
+                        </div>
+                    </div>
+                    <div class="pomodoro_item">
+                        <h2 id="session-label">Session Length</h2>
+                        <div class="pomodoro__item-settings">
+                            <i
+                                class="fas fa-arrow-down"
+                                id="session-decrement"
+                            ></i>
+                            <div id="session-length"></div>
+                            <i
+                                class="fas fa-arrow-up"
+                                id="session-increment"
+                            ></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="pomodoro__time">
+                    <h2 id="timer-label">Session</h2>
+                    <div id="time-left"></div>
+                </div>
+                <div class="pomodoro__control">
+                    <button id="start_stop">
+                        <i class="fas fa-play"></i>
+                        <i class="fas fa-stop"></i>
+                    </button>
+                    <button id="reset">
+                        <i class="fas fa-redo"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="copyright">
+                Designed by Peter Weinberg
+                <br />
+                <i>coded by adjsky</i>
+            </div>
+        </div>
+        <audio src="https://goo.gl/65cBl1" id='beep'></audio>
+        <script src="assets/js/script.js"></script>
+        <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+        <script src="https://kit.fontawesome.com/e8b025fc72.js"></script>
+    </body>
+</html>

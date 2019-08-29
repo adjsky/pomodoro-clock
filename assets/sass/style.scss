@@ -1,0 +1,108 @@
+body {
+    background: #1e555c;
+    margin: 0;
+    font-family: "Righteous", cursive;
+    font-size: 20px;
+
+    .app {
+        max-width: 600px;
+        width: 100%;
+        min-height: 100vh;
+        display: flex;
+        margin: 0 auto;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+
+        .pomodoro {
+            width: 80%;
+            color: #fff;
+            text-align: center;
+
+            h1,
+            h2 {
+                font-weight: 400;
+            }
+
+            .pomodoro__title {
+                margin: 0;
+                font-size: 45px;
+            }
+
+            .pomodoro__configuration {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+                margin-bottom: 20px;
+                font-size: 25px;
+
+                #break-label,
+                #session-label {
+                    margin: 20px 0 5px;
+                    font-size: 30px;
+                }
+
+                .pomodoro__item-settings {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+
+                #session-length,
+                #break-length {
+                    width: 40px;
+                }
+
+                i {
+                    cursor: pointer;
+                }
+            }
+
+            .pomodoro__time {
+                border: 7px solid #13353a;
+                border-radius: 50px;
+                width: 50%;
+                margin: 0 auto;
+                padding: 20px 0;
+                margin-bottom: 20px;
+
+                #timer-label {
+                    margin: 0;
+                }
+
+                #time-left {
+                    font-size: 50px;
+                }
+            }
+
+            .pomodoro__control {
+                #start_stop,
+                #reset {
+                    cursor: pointer;
+                    border: 0;
+                    background: none;
+                }
+
+                #start_stop:focus,
+                #reset:focus {
+                    outline: 0;
+                }
+
+                i {
+                    color: #fff;
+                    font-size: 20px;
+                }
+            }
+        }
+
+        .copyright {
+            font-size: 15px;
+            color: red;
+            margin-top: 20px;
+            text-align: center;
+
+            i {
+                color: blue;
+            }
+        }
+    }
+}

@@ -1,0 +1,124 @@
+body {
+  background: #1e555c;
+  margin: 0;
+  font-family: "Righteous", cursive;
+  font-size: 20px;
+}
+
+body .app {
+  max-width: 600px;
+  width: 100%;
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0 auto;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+body .app .pomodoro {
+  width: 80%;
+  color: #fff;
+  text-align: center;
+}
+
+body .app .pomodoro h1,
+body .app .pomodoro h2 {
+  font-weight: 400;
+}
+
+body .app .pomodoro .pomodoro__title {
+  margin: 0;
+  font-size: 45px;
+}
+
+body .app .pomodoro .pomodoro__configuration {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(240px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  margin-bottom: 20px;
+  font-size: 25px;
+}
+
+body .app .pomodoro .pomodoro__configuration #break-label,
+body .app .pomodoro .pomodoro__configuration #session-label {
+  margin: 20px 0 5px;
+  font-size: 30px;
+}
+
+body .app .pomodoro .pomodoro__configuration .pomodoro__item-settings {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body .app .pomodoro .pomodoro__configuration #session-length,
+body .app .pomodoro .pomodoro__configuration #break-length {
+  width: 40px;
+}
+
+body .app .pomodoro .pomodoro__configuration i {
+  cursor: pointer;
+}
+
+body .app .pomodoro .pomodoro__time {
+  border: 7px solid #13353a;
+  border-radius: 50px;
+  width: 50%;
+  margin: 0 auto;
+  padding: 20px 0;
+  margin-bottom: 20px;
+}
+
+body .app .pomodoro .pomodoro__time #timer-label {
+  margin: 0;
+}
+
+body .app .pomodoro .pomodoro__time #time-left {
+  font-size: 50px;
+}
+
+body .app .pomodoro .pomodoro__control #start_stop,
+body .app .pomodoro .pomodoro__control #reset {
+  cursor: pointer;
+  border: 0;
+  background: none;
+}
+
+body .app .pomodoro .pomodoro__control #start_stop:focus,
+body .app .pomodoro .pomodoro__control #reset:focus {
+  outline: 0;
+}
+
+body .app .pomodoro .pomodoro__control i {
+  color: #fff;
+  font-size: 20px;
+}
+
+body .app .copyright {
+  font-size: 15px;
+  color: red;
+  margin-top: 20px;
+  text-align: center;
+}
+
+body .app .copyright i {
+  color: blue;
+}
+/*# sourceMappingURL=style.css.map */
