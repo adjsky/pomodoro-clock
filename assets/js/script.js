@@ -4,8 +4,8 @@ const timer = document.querySelector("#time-left"),
     configuration = document.querySelector(".pomodoro__configuration"),
     beep = document.querySelector("#beep");
 
-let sessionLength = .1,
-    breakLength = .1,
+let sessionLength = 25,
+    breakLength = 5,
     timerInterval,
     timeleft,
     breakStarted,
@@ -23,6 +23,7 @@ function changeTimer(left) {
     }
     timer.textContent = minutes + ":" + seconds;
     if (breakStarted) {
+        beep.play()
         timerName.textContent = "Break";
     } else {
         timerName.textContent = "Session";
@@ -32,11 +33,8 @@ function changeTimer(left) {
 
 function startTimer(time = sessionLength * 60) {
     timeleft = time;
-    timerInterval = setTimeout(function timeout() {
+    timerInterval = setTimeout(function timeout() {                     
         timeleft -= 1;
-        if (timeleft === 0 && !breakStarted) {
-            beep.play();
-        }
         if (timeleft < 0) {
             if (breakStarted) {
                 breakStarted = false;
@@ -75,7 +73,7 @@ control.addEventListener("click", e => {
             timerInterval = null; // check if a clock has been reseted
         } else {
             timerRunning = true;
-            timeleft ? startTimer(timeleft) : startTimer(); // start clock after stopping or start after resetting
+            timeleft ? startTimer(timeleft) : startTimer(); // start clock after stopping or start after reseting
         }
         return;
     }
